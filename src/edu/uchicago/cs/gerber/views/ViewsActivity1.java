@@ -13,65 +13,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-public class ViewsActivity1 extends Activity implements CompoundButton.OnCheckedChangeListener, RadioGroup.OnCheckedChangeListener {
+public class ViewsActivity1 extends Activity  {
 	/** Called when the activity is first created. */
 
-	TextView txtDate;
-	ToggleButton tog;
-	RadioGroup rgpRad;
 	// you don't even need references to the radio buttons
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.va1);
 
-		tog = (ToggleButton) findViewById(R.id.tog);
-		tog.setOnCheckedChangeListener(this);
-
-		txtDate = (TextView) findViewById(R.id.txtDate);
-
-		// radio gruop and buttons
-		rgpRad = (RadioGroup) findViewById(R.id.grp);
-		
-		rgpRad.setOnCheckedChangeListener(this);
-	}
-
-
-
-	@Override
-	public void onCheckedChanged(RadioGroup arg0, int nId) {
-
-		switch (nId) {
-		case R.id.rad1:
-			Toast.makeText(getBaseContext(),
-					nId + " you clicked rad button 1",
-					Toast.LENGTH_SHORT).show();
-			break;
-		case R.id.rad2:
-			Toast.makeText(getBaseContext(),
-					nId + " you clicked rad button 2",
-					Toast.LENGTH_SHORT).show();
-			break;
-		case R.id.rad3:
-			Toast.makeText(getBaseContext(),
-					nId + " you clicked rad button 3",
-					Toast.LENGTH_SHORT).show();
-			break;
-		default:
-			break;
-		}
 
 	}
-	
-	@Override
-	public void onCheckedChanged(CompoundButton arg0, boolean bOn) {
-		// TODO Auto-generated method stub
-		if (bOn)
-			Toast.makeText(getBaseContext(), " on", Toast.LENGTH_SHORT).show();
-		else
-			Toast.makeText(getBaseContext(), " off", Toast.LENGTH_SHORT).show();
 
-	}
+
 
 }
